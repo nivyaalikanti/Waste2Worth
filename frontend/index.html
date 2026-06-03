@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI E-Waste Valuation System</title>
+
+```
+<link rel="stylesheet" href="css/style.css">
+```
+
+</head>
+<body>
+
+```
+<!-- NAVBAR -->
+
+<nav class="navbar">
+    <h2>♻ AI E-Waste Valuation System</h2>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            AI-Powered E-Waste
+            Valuation System
+        </h1>
+
+        <p>
+            Predict resale value, estimate recoverable
+            materials and get intelligent recommendations
+            on whether to resell or recycle your device.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- MAIN SECTION -->
+
+<div class="container">
+
+    <!-- LEFT PANEL -->
+
+    <div class="input-card">
+
+        <h2>Device Information</h2>
+
+        <div class="row">
+
+            <div class="form-group">
+                <label>Brand</label>
+
+                <select id="brand">
+
+                    <option>Samsung</option>
+                    <option>Apple</option>
+                    <option>Xiaomi</option>
+                    <option>OnePlus</option>
+                    <option>Oppo</option>
+                    <option>Vivo</option>
+                    <option>Realme</option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Operating System</label>
+
+                <select id="os">
+
+                    <option>Android</option>
+                    <option>iOS</option>
+                    <option>Windows</option>
+
+                </select>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="form-group">
+                <label>Screen Size</label>
+
+                <input
+                    id="screen_size"
+                    type="number"
+                    step="0.1"
+                    placeholder="6.5"
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Weight (g)</label>
+
+                <input
+                    id="weight"
+                    type="number"
+                    placeholder="180"
+                >
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="form-group">
+                <label>RAM (GB)</label>
+
+                <input
+                    id="ram"
+                    type="number"
+                    placeholder="8"
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Storage (GB)</label>
+
+                <input
+                    id="storage"
+                    type="number"
+                    placeholder="128"
+                >
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="form-group">
+                <label>Battery (mAh)</label>
+
+                <input
+                    id="battery"
+                    type="number"
+                    placeholder="5000"
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Days Used</label>
+
+                <input
+                    id="days_used"
+                    type="number"
+                    placeholder="365"
+                >
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="form-group">
+                <label>Rear Camera MP</label>
+
+                <input
+                    id="rear_camera"
+                    type="number"
+                    placeholder="64"
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Front Camera MP</label>
+
+                <input
+                    id="front_camera"
+                    type="number"
+                    placeholder="16"
+                >
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="form-group">
+                <label>Release Year</label>
+
+                <input
+                    id="release_year"
+                    type="number"
+                    placeholder="2022"
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Original Price (USD)</label>
+
+                <input
+                    id="new_price"
+                    type="number"
+                    placeholder="500"
+                >
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="form-group">
+
+                <label>4G</label>
+
+                <select id="fourg">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>5G</label>
+
+                <select id="fiveg">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+
+            </div>
+
+        </div>
+
+        <button
+            id="predictBtn"
+            class="estimate-btn"
+        >
+            Estimate Value
+        </button>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+
+    <div class="result-card">
+
+        <h2>Your Results</h2>
+
+        <div
+            id="recommendationBox"
+            class="recommendation"
+        >
+
+            <h3 id="recommendation">
+                Waiting for prediction...
+            </h3>
+
+            <p>
+                Enter device details and click
+                Estimate Value.
+            </p>
+
+        </div>
+
+        <div class="price-grid">
+
+            <div class="mini-card">
+
+                <h4>💰 Resale Value</h4>
+
+                <p
+                    id="resaleValue"
+                    class="price"
+                >
+                    ₹0
+                </p>
+
+            </div>
+
+            <div class="mini-card">
+
+                <h4>♻ Recycling Value</h4>
+
+                <p
+                    id="recycleValue"
+                    class="price"
+                >
+                    ₹0
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="material-card">
+
+            <h4>
+                Recoverable Materials
+            </h4>
+
+            <p id="gold">
+                Gold : 0 g
+            </p>
+
+            <p id="silver">
+                Silver : 0 g
+            </p>
+
+            <p id="copper">
+                Copper : 0 g
+            </p>
+
+            <p id="lithium">
+                Lithium : 0 g
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+```
+
+</body>
+</html>
