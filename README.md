@@ -56,6 +56,15 @@ Recycling Value Calculation
 ↓
 Resell vs Recycle Recommendation
 
+
+## Results Gallery
+
+Here are the results showcasing the performance and output of the Waste2Worth system:
+
+![Result 1](frontend/assets/result-1.jpeg)
+
+![Result 2](frontend/assets/result-2.jpeg)
+
 ## Future Enhancements
 
 - Dynamic precious metal pricing
